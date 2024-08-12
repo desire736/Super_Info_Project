@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
-from .models import Publications, Hashtags
+from .models import Publications, Hashtags, Contacts
 
 
 class HomeView(TemplateView):
@@ -9,7 +9,9 @@ class HomeView(TemplateView):
    def get_context_data(self, **kwargs):
       context = {
 
-         'publication': Publications.objects.filter(is_active=True)
+         'publication': Publications.objects.all(),
+         'publications': Publications.objects.filter(is_active=True)
+
 
       }
       return context
@@ -30,3 +32,14 @@ class PublicDetailView(TemplateView):
       }
       return context
 
+def client_contact(request):
+   print(request.POST)
+
+   name = request.POST['name']
+   email = request.POST['email']
+   subject = request.POST['subject']
+   message = request.POST['message']
+
+   Contacts.objects.create(name=name, email=email, subject=subject, message=message)
+
+   return redirect('contact-list')

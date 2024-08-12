@@ -13,6 +13,16 @@ class Publications(models.Model):
    title = models.CharField(max_length=255)
    short_description = models.TextField(null=True)
    description = models.TextField()
+   img = models.ImageField(null=True)
    datetime = models.DateField()
    is_active = models.BooleanField(default=True)
+
+
+
+class Contacts(models.Model):
+   name = models.CharField(max_length=255)
+   email = models.EmailField()
+   subject = models.TextField()
+   message = models.TextField()
+
 
