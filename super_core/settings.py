@@ -123,6 +123,11 @@ LANGUAGES = (
     ('kg', gettext('Kyrgyz')),
 )
 
+LOCATE_PATHS = [
+    BASE_DIR / 'locate',
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 MEDIA_URL = '/media/'
