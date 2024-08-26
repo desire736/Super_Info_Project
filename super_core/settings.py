@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zv)=3+ko&vd&%562p8eet(fmqu*h7ub3+=%47j3tjvl&0$m0ts
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,16 +118,16 @@ USE_TZ = True
 
 gettext = lambda s: s
 
-LANGUAGES = (
-    ('ru', gettext('Russian')),
-    ('kg', gettext('Kyrgyz')),
-)
-
+# LANGUAGES = (
+#     ('ru', gettext('Russian')),
+#     ('kg', gettext('Kyrgyz')),
+# )
+#
 LOCATE_PATHS = [
     BASE_DIR / 'locate',
 ]
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+# MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
